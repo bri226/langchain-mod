@@ -128,7 +128,7 @@ def create_sql_query_chain(
         prompt_to_use = prompt_to_use.partial(dialect=db.dialect)
 
     inputs = {
-        "input": lambda x: x["question"] + "\nSQLQuery: ",
+        "input": lambda x: x["input"] + "\nSQLQuery: ",
         "table_info": lambda x: db.get_table_info(
             table_names=x.get("table_names_to_use")
         ),
